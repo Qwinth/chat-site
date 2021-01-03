@@ -10,6 +10,6 @@ file_messages = open(path,'w')
 file_messages.close()
 html_code = '''
 <head>
-<meta http-equiv="refresh" content="1;URL=http://82.193.114.39:7000" />
+<meta http-equiv="refresh" content="1;URL=your ip address" />
 </head>'''
 print(html_code)
