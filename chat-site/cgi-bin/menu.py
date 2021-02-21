@@ -1,4 +1,3 @@
-#!C:\Program Files (x86)\Python38-32\python.exe
 import cgi
 import os
 form = cgi.FieldStorage()
