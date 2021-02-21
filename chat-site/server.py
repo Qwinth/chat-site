@@ -1,5 +1,5 @@
 from http.server import ThreadingHTTPServer, CGIHTTPRequestHandler
-import pause                #підключення бібліотеки "pause"
+import time
 import socket
 import os
 PORT = 80
@@ -9,7 +9,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(("google.com",80))
 IP = (s.getsockname()[0])
 s.close()
-settings_mode = ('none')#режим налаштування
+settings_mode = ('none')
 check = os.path.isfile('server.properties')
 
 if check == True:
@@ -21,8 +21,8 @@ if check == True:
         settings_mode = ('false')
 else:
     settings_mode = ('false')
-if settings_mode == 'true':   #перевірка якщо режим надаштування = true
-    c=input('Введіть режим: ') #ввід данних у змінну "с" settings_mode-це теж змінна
+if settings_mode == 'true':
+    c=input('Введіть режим: ')
 
 if settings_mode == 'false':
     print('Server started')
@@ -67,7 +67,7 @@ if c == 'u':
     server_address=(IP,PORT)
     httpd = ThreadingHTTPServer(server_address, CGIHTTPRequestHandler)
     httpd.serve_forever()
-else:                                           #інакше
+else:
     print('Немає такого режиму')
-    pause.milliseconds(1000)    #пауза перед закриттям програми (можна міняти цифри)
+    time.sleep(1)
     
